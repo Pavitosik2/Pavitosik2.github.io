@@ -6,28 +6,27 @@
 </head>
 <link rel="stylesheet" href="style.css">
 <body>
-	<h1>Рандомайзер ролей Night Mafia</h1>
+	<div class="background">
+	<h1 class="bold big-t">Рандомайзер ролей Night Mafia</h1>
 	<div>
-		<span>Введите кол-во игроков: <input type="text" class="player" value="1"></span>
+		<span>Введите кол-во игроков: <input type="text" class="player inp" value="0"></span>
 	</div>
 	<hr>
-	<div>
 		<span>Выберите какие роли будет в игре 
 			<br>
-			<input type="checkbox" class="maf" checked> Мафия
-			<input type="text" placeholder="Их кол-во" class="mafs">
+			<input type="checkbox" class="maf checks" checked> Мафия
+			<input type="text" placeholder="Кол-во мафий" class="mafs inp">
 			<br>
-			<input type="checkbox" class="kom"> Комиссар 
+			<input type="checkbox" class="kom checks"> Комиссар 
 			<br>
-			<input type="checkbox" class="don"> Дон Мафии
+			<input type="checkbox" class="don checks"> Дон Мафии
 			<br>
-			<input type="checkbox" class="dok"> Доктор
+			<input type="checkbox" class="dok checks"> Доктор
 			<br>
-			<input type="checkbox" class="man"> Маньяк
+			<input type="checkbox" class="man checks"> Маньяк
 		</span>
 		<br>
 		<button class="button">Отправить</button>
-	</div>
 	<hr>
 	<span class="bold">Роли	</span>
 		<br>
@@ -40,6 +39,13 @@
 		<span class="roles-d">Доктор:</span>
 		<br>
 		<span class="roles-ma">Маньяк:</span>
+		<hr>
+	<span class="bold">Таймер</span>
+	<div>
+		<span>В ближайшем будущем...</span>
+	</div>
+
+	</div>
 	<script src="js/index.js"></script>
 </body>
 </html>
