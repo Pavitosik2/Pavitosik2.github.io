@@ -66,7 +66,7 @@ button.onclick = () => {
 	}
 	if (maf.checked) {
 		for (let i = mafs; i > 0; i--) {
-			roleM.innerHTML += mafias[i-1] + ` `;
+			roleM.innerHTML += mafias[i-1] + `, `;
 		}
 	}
 	if (kom.checked) {
@@ -132,4 +132,5 @@ players.oninput = () => {
 // 	rand = Math.floor(Math.random() * (players.value)) + 1;
 // 	console.log(rand);
 // }
+
 
