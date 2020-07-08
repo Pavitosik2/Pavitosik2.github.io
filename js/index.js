@@ -6,6 +6,7 @@ let koms = 0;
 let dons = 0;
 let doks = 0;
 let mans = 0;
+let puts = 0;
 let rol = 0;
 let mafias = [];
 let roleM = document.querySelector(`.roles-m`);
@@ -13,6 +14,7 @@ let roleK = document.querySelector(`.roles-k`);
 let roleDon = document.querySelector(`.roles-don`);
 let roleD = document.querySelector(`.roles-d`);
 let roleMa = document.querySelector(`.roles-ma`);
+let rolePu = document.querySelector(`.roles-pu`);
 
 
 let maf = document.querySelector(`.maf`);
@@ -20,6 +22,7 @@ let kom = document.querySelector(`.kom`);
 let don = document.querySelector(`.don`);
 let dok = document.querySelector(`.dok`);
 let man = document.querySelector(`.man`);
+let put = document.querySelector(`.put`);
 
 
 button.onclick = () => {
@@ -28,6 +31,7 @@ button.onclick = () => {
 	roleDon.innerHTML = `Дон Мафии:`;
 	roleD.innerHTML = `Доктор:`;
 	roleMa.innerHTML = `Маньяк:`;
+	rolePu.innerHTML = `Путин:`;
 	if (maf.checked) {
 	mafs = document.querySelector(`.mafs`);
 	mafs = mafs.value;
@@ -44,6 +48,9 @@ button.onclick = () => {
 }	
 	if (man.checked) {
 	mans = 1;
+}
+	if (put.checked) {
+	puts = 1;
 }
 	// rol = Number(mafs) + Number(koms) + Number(doks) + Number(mans);
 	// console.log(rol);
@@ -111,6 +118,17 @@ button.onclick = () => {
 			}
 		roleMa.innerHTML += mans;
 	}
+				if (put.checked) {
+		puts = Math.floor(Math.random() * (players.value)) + 1;
+			for (let j = mafs ; j > 0; j--) {
+				if (puts == mafias[j-1] || puts == koms || puts == dons || puts == doks || puts == mans) {
+				mans = Math.floor(Math.random() * (players.value)) + 1;
+				j++
+				}
+			}
+		rolePu.innerHTML += puts;
+	}
+
 
 
 
@@ -119,6 +137,7 @@ button.onclick = () => {
 	koms = 0;
 	doks = 0;
 	mans = 0;
+	puts = 0;
 }
 
 
