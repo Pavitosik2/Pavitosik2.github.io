@@ -122,7 +122,7 @@ button.onclick = () => {
 		puts = Math.floor(Math.random() * (players.value)) + 1;
 			for (let j = mafs ; j > 0; j--) {
 				if (puts == mafias[j-1] || puts == koms || puts == dons || puts == doks || puts == mans) {
-				mans = Math.floor(Math.random() * (players.value)) + 1;
+				puts = Math.floor(Math.random() * (players.value)) + 1;
 				j++
 				}
 			}
