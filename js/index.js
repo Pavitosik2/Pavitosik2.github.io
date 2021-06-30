@@ -15,7 +15,10 @@ let roleDon = document.querySelector(`.roles-don`);
 let roleD = document.querySelector(`.roles-d`);
 let roleMa = document.querySelector(`.roles-ma`);
 let rolePu = document.querySelector(`.roles-pu`);
-
+let timebut = document.querySelector('.timebut');
+let timer = document.querySelector('.timer');
+let timerS;
+let timestop = document.querySelector('.timestop');
 
 let maf = document.querySelector(`.maf`);
 let kom = document.querySelector(`.kom`);
@@ -26,31 +29,37 @@ let put = document.querySelector(`.put`);
 
 
 button.onclick = () => {
-	roleM.innerHTML = `Мафия:`;
-	roleK.innerHTML = `Комиссар:`;
-	roleDon.innerHTML = `Дон Мафии:`;
-	roleD.innerHTML = `Доктор:`;
-	roleMa.innerHTML = `Маньяк:`;
-	rolePu.innerHTML = `Путин:`;
+	roleM.innerHTML = ``;
+	roleK.innerHTML = ``;
+	roleDon.innerHTML = ``;
+	roleD.innerHTML = ``;
+	roleMa.innerHTML = ``;
+	rolePu.innerHTML = ``;
 	if (maf.checked) {
 	mafs = document.querySelector(`.mafs`);
 	mafs = mafs.value;
+	roleM.innerHTML = `Мафия:`;
 	// console.log(mafs);
 }
 	if (kom.checked) {
 	koms = 1;
+	roleK.innerHTML = `Комиссар:`;
 }	
 	if (don.checked) {
 	dons = 1;
+	roleDon.innerHTML = `Дон Мафии:`;
 }	
 	if (dok.checked) {
 	doks = 1;
+	roleD.innerHTML = `Доктор:`;
 }	
 	if (man.checked) {
 	mans = 1;
+	roleMa.innerHTML = `Маньяк:`;
 }
 	if (put.checked) {
 	puts = 1;
+	rolePu.innerHTML = `Путин:`;
 }
 	// rol = Number(mafs) + Number(koms) + Number(doks) + Number(mans);
 	// console.log(rol);
@@ -73,7 +82,7 @@ button.onclick = () => {
 	}
 	if (maf.checked) {
 		for (let i = mafs; i > 0; i--) {
-			roleM.innerHTML += mafias[i-1] + `, `;
+			roleM.innerHTML += mafias[i-1] + ` `;
 		}
 	}
 	if (kom.checked) {
@@ -153,3 +162,23 @@ players.oninput = () => {
 // }
 
 
+timebut.onclick = () => {
+	timebut.innerHTML = 'Начать заново';
+	let sec = 60;
+	clearInterval(timerS);
+	timerS = setInterval(function Times() {
+		timer.innerHTML = sec;
+		sec = sec - 1;
+		if (sec < 0) {
+			clearInterval(timerS);
+			timer.innerHTML = '';
+		}
+	}, 1000);
+
+}
+
+
+timestop.onclick = () => {
+	clearInterval(timerS);
+	timer.innerHTML = '';
+}
