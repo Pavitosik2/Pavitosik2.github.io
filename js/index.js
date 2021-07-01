@@ -17,8 +17,18 @@ let roleMa = document.querySelector(`.roles-ma`);
 let rolePu = document.querySelector(`.roles-pu`);
 let timebut = document.querySelector('.timebut');
 let timer = document.querySelector('.timer');
+let timer2 = document.querySelector('.timer2');
 let timerS;
+let timerS2;
 let timestop = document.querySelector('.timestop');
+let timestop2 = document.querySelector('.timestop2');
+let kolvosek = document.querySelector('.kolvosek');
+let timebut2 = document.querySelector('.timebut2');
+let diebut = document.querySelector('.diebut');
+let dieclear = document.querySelector('.dieclear');
+let dienum = document.querySelector('.dienum');
+let die = document.querySelector('.die');
+let dies = [];
 
 let maf = document.querySelector(`.maf`);
 let kom = document.querySelector(`.kom`);
@@ -181,4 +191,32 @@ timebut.onclick = () => {
 timestop.onclick = () => {
 	clearInterval(timerS);
 	timer.innerHTML = '';
+}
+
+timebut2.onclick = () => {
+	sec = kolvosek.value;
+	clearInterval(timerS2);
+	timerS2 = setInterval(function Times2() {
+	timer2.innerHTML = sec;
+	sec = sec - 1;
+	if (sec < 0) {
+		clearInterval(timerS2);
+		timer2.innerHTML = '';
+	}
+	}, 1000);
+}
+
+timestop2.onclick = () => {
+	clearInterval(timerS2);
+	timer2.innerHTML = '';
+}
+
+diebut.onclick = () => {
+	dies.push(String(dienum.value));
+	die.innerHTML = dies;
+}
+
+dieclear.onclick = () => {
+	dies = [];
+	die.innerHTML = '';
 }
